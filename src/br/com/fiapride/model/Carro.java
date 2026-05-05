@@ -1,25 +1,25 @@
 package br.com.fiapride.model;
 
-public class Carro  extends Veiculo {
-	// Atributo exclusivo do Carro (a mãe Veiculo não tem isso)
-    private int capacidadePassageiros;
+public class Carro extends Veiculo {
+	private int capacidadePassageiros;
 
-    // CONSTRUTOR DA FILHA
-    public Carro(String placa, String modelo, int capacidadePassageiros) {
-        // 'super' significa SUPERCLASSE (Mãe). 
-        // Estamos repassando a placa e o modelo para o construtor da mãe resolver!
-        super(placa, modelo); 
-        
-        // E aqui o Carro resolve o que é dele:
-        this.setCapacidadePassageiros(capacidadePassageiros);
+    public Carro (String placa, String modelo) {
+        super(placa, modelo);
+        this.setCapacidadePassageiros(4);
     }
 
-    // Getters e Setters específicos do Carro
     public int getCapacidadePassageiros() {
         return this.capacidadePassageiros;
     }
 
     private void setCapacidadePassageiros(int capacidadePassageiros) {
         this.capacidadePassageiros = capacidadePassageiros;
+    }
+    
+    @Override 
+    // Anotação obrigatória (Boas Práticas!)    
+    public String calcularAutonomia() {
+        double kmRestante = this.getNivelCombustivel() * 10.0;
+        return "Autonomia: " + kmRestante + " km (Consumo de 10 km/l).";
     }
 }

@@ -98,10 +98,14 @@ public class Smartwatch {
 	}
 	
 	public void exibirResumo() {
-	    System.out.println("\n--- RESUMO DO SMARTWATCH ---");
+	    System.out.println("--- RESUMO DO SMARTWATCH ---");
 	    System.out.println("Marca: " + this.marca);
 	    System.out.println("Usuário: " + this.usuario.getNome());
 	    System.out.println("Idade do Usuário: " + this.usuario.getIdade());
 	    System.out.println("----------------------------\n");
+	}
+	
+	public String calcularAutonomiaDaBateria() {
+		return "Autonomia da bateria não definida para um smartwatch genérico.";
 	}
 }

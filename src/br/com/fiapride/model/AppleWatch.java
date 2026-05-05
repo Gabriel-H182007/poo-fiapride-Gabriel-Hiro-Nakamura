@@ -16,4 +16,12 @@ public class AppleWatch extends Smartwatch {
 	private void setCompatibilidade(String compatibilidade) {
 		this.compatibilidade = compatibilidade;
 	}
+	
+	@Override
+	// Para calcular a autonomia da bateria, utilizamos a fórmula:
+	// Autonomia (em horas) = Nível atual da bateria (%) / Consumo médio por hora (%/h)
+	public String calcularAutonomiaDaBateria() {
+		double horasRestantes = this.getNivelBateria() / 12.0;
+		return "Apple Watch - Estimativa da autonomia da bateria: " + horasRestantes + " horas de uso";
+	}
 }

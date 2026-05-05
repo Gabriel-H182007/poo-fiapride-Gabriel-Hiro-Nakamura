@@ -17,4 +17,12 @@ public class GalaxyWatch extends Smartwatch{
 	private void setArmazenamento(int armazenamento) {
 		this.armazenamento = armazenamento;
 	}
+	
+	@Override
+	// Para calcular a autonomia da bateria, utilizamos a fórmula:
+	// Autonomia (em horas) = Nível atual da bateria (%) / Consumo médio por hora (%/h)
+	public String calcularAutonomiaDaBateria() {
+		double horasRestantes = this.getNivelBateria() / 9.0;
+		return "Galaxy Watch - Estimativa da autonomia da bateria: " + horasRestantes + " horas de uso";
+	}
 }
