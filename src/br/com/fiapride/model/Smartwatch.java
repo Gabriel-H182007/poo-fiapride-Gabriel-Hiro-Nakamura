@@ -7,14 +7,16 @@ public class Smartwatch {
 	private int nivelBateria;
 	private int batimentosPorMinuto;
 	private boolean estaNoPulso;
+	private Dono usuario;
 	
-	public Smartwatch(String marca, String corPlanoDeFundo, int tamanho) {
+	public Smartwatch(String marca, String corPlanoDeFundo, Dono usuario) {
 		this.setMarca(marca);
 		this.setCorPlanoDeFundo(corPlanoDeFundo);
-		this.setTamanho(tamanho);
+		this.setTamanho(44);
 		this.setNivelBateria(100);
 		this.setBatimentosPorMinuto(65);
 		this.setEstaNoPulso(true);
+		this.usuario = usuario;
 	}
 	public void informarFrequenciaCardiaca() {
 		if (this.estaNoPulso == false){
@@ -93,5 +95,12 @@ public class Smartwatch {
 	
 	private void setEstaNoPulso(boolean estaNoPulso) {
 		this.estaNoPulso = estaNoPulso;
+	}
+	public void exibirResumo() {
+	    System.out.println("\n--- RESUMO DO SMARTWATCH ---");
+	    System.out.println("Marca: " + this.marca);
+	    System.out.println("Usuário: " + this.usuario.getNome());
+	    System.out.println("Idade do Usuário: " + this.usuario.getIdade());
+	    System.out.println("----------------------------\n");
 	}
 }
