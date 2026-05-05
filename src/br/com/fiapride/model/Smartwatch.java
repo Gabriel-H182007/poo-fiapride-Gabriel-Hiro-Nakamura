@@ -1,6 +1,6 @@
 package br.com.fiapride.model;
 
-public class Smartwatch {
+public abstract class Smartwatch {
 	private String marca;
 	private String corPlanoDeFundo;
 	private int tamanho;
@@ -108,4 +108,7 @@ public class Smartwatch {
 	public String calcularAutonomiaDaBateria() {
 		return "Autonomia da bateria não definida para um smartwatch genérico.";
 	}
+	
+	// MÉTODO ABSTRATO
+	public abstract String exibirSistemaOperacional();
 }

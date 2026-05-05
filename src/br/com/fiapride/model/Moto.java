@@ -15,6 +15,11 @@ public class Moto extends Veiculo{
         return this.isEletrica;
     }
     
+    @Override
+    public void exibirTipo() {
+        System.out.println("Sou uma Moto");
+    }
+    
     @Override    
     public String calcularAutonomia() {
         double kmRestante = this.getNivelCombustivel() * 35.0; 

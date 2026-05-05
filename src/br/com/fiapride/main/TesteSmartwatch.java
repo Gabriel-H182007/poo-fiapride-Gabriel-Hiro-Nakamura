@@ -25,6 +25,14 @@ public class TesteSmartwatch {
              System.out.println("----------------------------------------");
  
         }
+        
+        //Smartwatch smartwatch1 = new Smartwatch("Apple", gabriel);
+		
+        Smartwatch applewatch1 = new AppleWatch("Apple", gabriel, "iPhone");
+        Smartwatch galaxywatch1 = new GalaxyWatch("Samsung", gabriel, 32);
+        
+        System.out.println("Sistema Operacional dos Smartwatches:");
+        System.out.println(applewatch1.exibirSistemaOperacional());      
+        System.out.println(galaxywatch1.exibirSistemaOperacional());
 	}
-
 }

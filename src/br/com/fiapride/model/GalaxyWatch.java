@@ -25,4 +25,10 @@ public class GalaxyWatch extends Smartwatch{
 		double horasRestantes = this.getNivelBateria() / 9.0;
 		return "Galaxy Watch - Estimativa da autonomia da bateria: " + horasRestantes + " horas de uso";
 	}
+	
+	@Override
+	// Método abstrato, pois obriga que todas as subclasses informem o sistema operacional que utilizam.
+	public String exibirSistemaOperacional() {
+        return "Sistema Operacional: " + "Wear OS";
+    }
 }

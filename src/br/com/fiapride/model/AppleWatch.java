@@ -2,7 +2,7 @@ package br.com.fiapride.model;
 
 public class AppleWatch extends Smartwatch {
 	
-	private String compatibilidade;
+private String compatibilidade;
 	
 	public AppleWatch(String marca, Dono usuario, String compatibilidade) {
 		super(marca, usuario);
@@ -24,4 +24,10 @@ public class AppleWatch extends Smartwatch {
 		double horasRestantes = this.getNivelBateria() / 12.0;
 		return "Apple Watch - Estimativa da autonomia da bateria: " + horasRestantes + " horas de uso";
 	}
+	
+	@Override
+	// Método abstrato, pois obriga que todas as subclasses informem o sistema operacional que utilizam.
+	public String exibirSistemaOperacional() {
+        return "Sistema Operacional: " + "watchOS";
+    }
 }
