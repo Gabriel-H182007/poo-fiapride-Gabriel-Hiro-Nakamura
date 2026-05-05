@@ -22,7 +22,6 @@ public class SistemaPrincipal {
         //System.out.println("Pagando viagem do passageiro 2");
         //passageiro2.pagarViagem(20);
 		
-		
 		// Desafio Prático - Smartwatch
         
         
