@@ -6,20 +6,20 @@ public class Smartwatch {
 	private int tamanho;
 	private int nivelBateria;
 	private int batimentosPorMinuto;
-	private boolean estaNoPulso;
+	private boolean isNoPulso;
 	private Dono usuario;
 	
-	public Smartwatch(String marca, String corPlanoDeFundo, Dono usuario) {
+	public Smartwatch(String marca,  Dono usuario) {
 		this.setMarca(marca);
-		this.setCorPlanoDeFundo(corPlanoDeFundo);
+		this.setCorPlanoDeFundo("Branco");
 		this.setTamanho(44);
 		this.setNivelBateria(100);
 		this.setBatimentosPorMinuto(65);
-		this.setEstaNoPulso(true);
+		this.setIsNoPulso(true);
 		this.usuario = usuario;
 	}
 	public void informarFrequenciaCardiaca() {
-		if (this.estaNoPulso == false){
+		if (this.isNoPulso == false){
 			System.out.println("Erro: O relógio precisa estar no pulso");
 			return;
 		} else if(this.nivelBateria <= 0) {
@@ -89,13 +89,14 @@ public class Smartwatch {
 		
 	}
 	
-	public boolean getEstaNoPulso() {
-		return this.estaNoPulso;
+	public boolean isNoPulso() {
+		return this.isNoPulso;
 	}
 	
-	private void setEstaNoPulso(boolean estaNoPulso) {
-		this.estaNoPulso = estaNoPulso;
+	private void setIsNoPulso(boolean estaNoPulso) {
+		this.isNoPulso = estaNoPulso;
 	}
+	
 	public void exibirResumo() {
 	    System.out.println("\n--- RESUMO DO SMARTWATCH ---");
 	    System.out.println("Marca: " + this.marca);
