@@ -1,44 +1,41 @@
 package br.com.fiapride.main;
-
-import br.com.fiapride.model.Passageiro;
+//import br.com.fiapride.model.Passageiro;
 import br.com.fiapride.model.Smartwatch;
-
 public class SistemaPrincipal {
 
 	public static void main(String[] args) {
-		 // INSTANCIAÇÃO
-        // O comando 'new' aloca memória para um novo objeto.
-        // Criando o primeiro passageiro (Objeto 1)
-        //Passageiro passageiro1 = new Passageiro();
-        //passageiro1.nome = "Ana Silva";
-        //passageiro1.saldo = 50.0;
-
-        // Criando o segundo passageiro (Objeto 2)
-        //Passageiro passageiro2 = new Passageiro();
-        //passageiro2.nome = "Carlos Souza";
-        //passageiro2.saldo = 12.50;
-
-        // Exibindo os dados no Console
-        //System.out.println("--- Sistema FiapRide ---");
-        //System.out.println("Passageiro: " + passageiro1.nome + " | Saldo: R$" + passageiro1.saldo);
-        //System.out.println("Passageiro: " + passageiro2.nome + " | Saldo: R$" + passageiro2.saldo);
-        
-        // Teste mental: Se eu mudar o nome do passageiro1, o passageiro2 muda?
 		
-		Smartwatch meusmartwatch = new Smartwatch();
-		meusmartwatch.marca = "Technos";
-		meusmartwatch.cor = "Cinza";
-		meusmartwatch.tamanho = 44;
+		//Passageiro passageiro1 = new Passageiro("Ana Silva", "222");
+		//System.out.println("Regarga passageiro 1");
+        //passageiro1.adicionarSaldo(50.0);
+        
+        //Passageiro passageiro2 = new Passageiro("Carlos Souza", "333");
+        //System.out.println("Regarga passageiro 2");
+        //passageiro2.adicionarSaldo(12.5);
  
-		Smartwatch smartwatch2 = new Smartwatch();
-		smartwatch2.marca = "Apple";
-		smartwatch2.cor = "Branco";
-		smartwatch2.tamanho = 44;
+        //System.out.println("--- Sistema FiapRide ---");
+        //System.out.println("Passageiro: " + passageiro1.nome + " | Saldo: R$ " + passageiro1.saldo + " | CPF: " + passageiro1.cpf);
+        //System.out.println("Passageiro: " + passageiro2.nome + " | Saldo: R$ " + passageiro2.saldo + " | CPF: " + passageiro2.cpf);
+        
+        //System.out.println("Pagando viagem do passageiro 1");
+        //passageiro1.pagarViagem(20);
+        //System.out.println("Pagando viagem do passageiro 2");
+        //passageiro2.pagarViagem(20);
+		
+		
+		// Desafio Prático - Smartwatch
+        
+        
+		Smartwatch meusmartwatch = new Smartwatch("Apple", "Azul", 44);
+		meusmartwatch.informarFrequenciaCardiaca();
+		meusmartwatch.mudarCorPlanoDeFundo("amarelo");
  
-		System.out.println("Meu Smartwatch é da cor: " + meusmartwatch.cor + " | Marca: " + meusmartwatch.marca
-				+ " | Tamanho: " + meusmartwatch.tamanho);
-		System.out.println("O Smartwatch2 é da cor: " + smartwatch2.cor + " | Marca: " + smartwatch2.marca
-				+ " | Tamanho: " + smartwatch2.tamanho);
+		Smartwatch smartwatch2 = new Smartwatch("Technos", "rosa", 44);
+		smartwatch2.informarFrequenciaCardiaca();
+		smartwatch2.mudarCorPlanoDeFundo("verde");
+ 
+		System.out.println("Meu Smartwatch é da cor: " + meusmartwatch.corPlanoDeFundo + " | Marca: " + meusmartwatch.marca + " | Tamanho: " + meusmartwatch.tamanho + " | Batimentos Cardíacos: " + meusmartwatch.batimentosPorMinuto + "ppm" + " | Bateria: " + meusmartwatch.nivelBateria + "%" + " | Está no pulso: " + meusmartwatch.estaNoPulso);
+		System.out.println("O Smartwatch2 é da cor: " + smartwatch2.corPlanoDeFundo + " | Marca: " + smartwatch2.marca + " | Tamanho: " + smartwatch2.tamanho + " | Batimentos Cardíacos: " + smartwatch2.batimentosPorMinuto + "ppm" + " | Bateria: " + smartwatch2.nivelBateria + "%" + " | Está no pulso: " + smartwatch2.estaNoPulso);
 	}
 
 }

@@ -1,0 +1,15 @@
+# Ignorar arquivos compilados do Java
+*.class
+# Ignorar pastas geradas por IDEs (VS Code, IntelliJ, Eclipse)
+.vscode/
+.idea/
+*.iml
+.metadata/
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Ignorar pastas de build e dependências locais
+bin/
+target/
