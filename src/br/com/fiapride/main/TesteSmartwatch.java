@@ -16,6 +16,8 @@ public class TesteSmartwatch {
 
 		//meusmartwatch.batimentosPorMinuto = 101;
 		//meusmartwatch.nivelBateria = -1;
+		
+		//Smartwatch smartwatch3 = new Smartwatch();
 
 	}
 
