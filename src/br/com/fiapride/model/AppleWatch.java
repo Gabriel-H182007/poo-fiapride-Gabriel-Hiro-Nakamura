@@ -1,8 +1,8 @@
 package br.com.fiapride.model;
 
-public class AppleWatch extends Smartwatch {
+public class AppleWatch extends Smartwatch implements Notificavel{
 	
-private String compatibilidade;
+	private String compatibilidade;
 	
 	public AppleWatch(String marca, Dono usuario, String compatibilidade) {
 		super(marca, usuario);
@@ -30,4 +30,13 @@ private String compatibilidade;
 	public String exibirSistemaOperacional() {
         return "Sistema Operacional: " + "watchOS";
     }
+	
+	@Override
+	public void enviarNotificacao(String mensagem) {
+		if (mensagem.length() < Notificavel.TAMANHO_MINIMO_NOTIFICACAO || mensagem.length() > Notificavel.TAMANHO_MAXIMO_NOTIFICACAO) {
+			System.out.println("Erro: Tamanho da notificação inválido");
+			return;
+		}
+		System.out.println("Smartwatch " + getMarca() + " enviou notificação: " + mensagem);
+	}
 }

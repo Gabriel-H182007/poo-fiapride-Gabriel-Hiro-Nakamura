@@ -1,6 +1,6 @@
 package br.com.fiapride.model;
 
-public class GalaxyWatch extends Smartwatch{
+public class GalaxyWatch extends Smartwatch implements Notificavel{
 	
 	private int armazenamento;
 	
@@ -31,4 +31,13 @@ public class GalaxyWatch extends Smartwatch{
 	public String exibirSistemaOperacional() {
         return "Sistema Operacional: " + "Wear OS";
     }
+	
+	@Override
+	public void enviarNotificacao(String mensagem) {
+		if (mensagem.length() < Notificavel.TAMANHO_MINIMO_NOTIFICACAO || mensagem.length() > Notificavel.TAMANHO_MAXIMO_NOTIFICACAO) {
+			System.out.println("Erro: Tamanho da notificação inválido");
+			return;
+		}
+		System.out.println("Smartwatch " + getMarca() + " enviou notificação: " + mensagem);
+	}
 }
