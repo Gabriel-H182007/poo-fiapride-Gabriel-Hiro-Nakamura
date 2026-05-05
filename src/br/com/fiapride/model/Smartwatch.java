@@ -1,24 +1,27 @@
 package br.com.fiapride.model;
 
 public class Smartwatch {
-	public String marca;
-	public String corPlanoDeFundo;
-	public int tamanho;
-	public int nivelBateria;
-	public int batimentosPorMinuto;
-	public boolean estaNoPulso;
+	private String marca;
+	private String corPlanoDeFundo;
+	private int tamanho;
+	private int nivelBateria;
+	private int batimentosPorMinuto;
+	private boolean estaNoPulso;
 	
 	public Smartwatch(String marca, String corPlanoDeFundo, int tamanho) {
-		this.marca = marca;
-		this.corPlanoDeFundo = corPlanoDeFundo;
-		this.tamanho = tamanho;
-		this.nivelBateria = 100;
-		this.batimentosPorMinuto = 65;
-		this.estaNoPulso = true;
+		this.setMarca(marca);
+		this.setCorPlanoDeFundo(corPlanoDeFundo);
+		this.setTamanho(tamanho);
+		this.setNivelBateria(100);
+		this.setBatimentosPorMinuto(65);
+		this.setEstaNoPulso(true);
 	}
 	public void informarFrequenciaCardiaca() {
-		if (this.estaNoPulso == false &&  this.nivelBateria <= 0){
-			System.out.println("Erro: O relógio não está no pulso ou nível insuficiente de bateria");
+		if (this.estaNoPulso == false){
+			System.out.println("Erro: O relógio precisa estar no pulso");
+			return;
+		} else if(this.nivelBateria <= 0) {
+			System.out.println("Erro: O nível de bateria deve ser suficiente");
 			return;
 		}
 		System.out.println("Medindo a frequência cardíaca...");
@@ -33,5 +36,62 @@ public class Smartwatch {
 		System.out.println("Mudando a cor do plano de fundo...");
 		this.corPlanoDeFundo = corPlanoDeFundo;
 		System.out.println("Cor alterada para: " + corPlanoDeFundo);
+		
+	}
+	public String getMarca() {
+		return this.marca;
+	}
+	
+	private void setMarca(String marca) {
+		this.marca = marca;
+	}
+	
+	public String getCorPlanoDeFundo() {
+		return this.corPlanoDeFundo;
+	}
+	
+	private void setCorPlanoDeFundo(String corPlanoDeFundo) {
+		this.corPlanoDeFundo = corPlanoDeFundo;
+	}
+	
+	public int getTamanho() {
+		return this.tamanho;
+	}
+	
+	private void setTamanho(int tamanho) {
+		this.tamanho = tamanho;
+	}
+	
+	public int getNivelBateria() {
+		return this.nivelBateria;
+	}
+	
+	private void setNivelBateria(int nivelBateria) {
+		if(nivelBateria >= 0 && nivelBateria <= 100) {
+			this.nivelBateria = nivelBateria;
+		} else {
+			System.out.println("Erro de Segurança: Tentativa de definir bateria com valor negativo e acima de 100% bloqueada!");
+		}
+	}
+	
+	public int getBatimentosPorMinuto() {
+		return this.batimentosPorMinuto;
+	}
+	
+	private void setBatimentosPorMinuto(int batimentosPorMinuto) {
+		if(batimentosPorMinuto >= 30 && batimentosPorMinuto <= 220) {
+			this.batimentosPorMinuto = batimentosPorMinuto;
+		} else {
+			System.out.println("Erro de Segurança: Tentativa de definir valor de batimentos cardíacos fora do intervalo (30 - 220 ppm) bloqueada!");
+		}
+		
+	}
+	
+	public boolean getEstaNoPulso() {
+		return this.estaNoPulso;
+	}
+	
+	private void setEstaNoPulso(boolean estaNoPulso) {
+		this.estaNoPulso = estaNoPulso;
 	}
 }
