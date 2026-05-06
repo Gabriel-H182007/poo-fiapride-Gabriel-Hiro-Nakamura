@@ -32,6 +32,7 @@ public class AppleWatch extends Smartwatch implements Notificavel{
     }
 	
 	@Override
+	//Implementa método abstrato da interface, pois as classes GalaxyWatch, AppleWatch e Email, possuem o mesmo método (enviarNotificacao)
 	public void enviarNotificacao(String mensagem) {
 		if (mensagem.length() < Notificavel.TAMANHO_MINIMO_NOTIFICACAO || mensagem.length() > Notificavel.TAMANHO_MAXIMO_NOTIFICACAO) {
 			System.out.println("Erro: Tamanho da notificação inválido");

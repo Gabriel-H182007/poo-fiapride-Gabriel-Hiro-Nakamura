@@ -13,6 +13,15 @@ public class TesteSmartwatch {
 
 	public static void main(String[] args) {
 		
+		Dono bia = new Dono("Bia", 18);
+		AppleWatch meuapplewatch = new AppleWatch("Apple", bia, "iPhone");
+		meuapplewatch.informarFrequenciaCardiaca();
+		meuapplewatch.mudarCorPlanoDeFundo("amarelo");
+		System.out.println("Smartwatch - " + " Cor do plano de fundo: " + meuapplewatch.getCorPlanoDeFundo() + " | Marca: " + meuapplewatch.getMarca() + " | Tamanho: " + meuapplewatch.getTamanho() + " | Batimentos Cardíacos: " + meuapplewatch.getBatimentosPorMinuto() + "ppm" + " | Bateria: " + meuapplewatch.getNivelBateria() + "%" + " | Está no pulso: " + meuapplewatch.isNoPulso());
+		System.out.println();
+		meuapplewatch.exibirResumo();
+		
+		
 		Dono gabriel = new Dono("Gabriel", 18);
 		Dono daniel = new Dono("Daniel", 19);
 
@@ -33,6 +42,7 @@ public class TesteSmartwatch {
         Smartwatch applewatch1 = new AppleWatch("Apple", gabriel, "iPhone");
         Smartwatch galaxywatch1 = new GalaxyWatch("Samsung", gabriel, 32);
         
+        System.out.println();
         System.out.println("Sistema Operacional dos Smartwatches:");
         System.out.println(applewatch1.exibirSistemaOperacional());      
         System.out.println(galaxywatch1.exibirSistemaOperacional());

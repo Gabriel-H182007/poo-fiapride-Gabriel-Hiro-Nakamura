@@ -18,6 +18,8 @@ public abstract class Smartwatch {
 		this.setIsNoPulso(true);
 		this.usuario = usuario;
 	}
+	
+	// Método com regra de negócio que informa a frequencia Cardiaca
 	public void informarFrequenciaCardiaca() {
 		if (this.isNoPulso == false){
 			System.out.println("Erro: O relógio precisa estar no pulso");
@@ -30,6 +32,8 @@ public abstract class Smartwatch {
 		System.out.println("Sua frequência cardíaca é de: " + this.batimentosPorMinuto + "ppm");
 		
 	}
+	
+	//Método com regra de negócio que muda a cor do plano de fundo do Smartwatch
 	public void mudarCorPlanoDeFundo(String corPlanoDeFundo) {
 		if(this.nivelBateria <=0) {
 			System.out.println("Erro: Nível de bateria insuficiente");
@@ -68,6 +72,7 @@ public abstract class Smartwatch {
 		return this.nivelBateria;
 	}
 	
+	// Regra de negócio para que não seja possível inserir valores inválidos
 	private void setNivelBateria(int nivelBateria) {
 		if(nivelBateria >= 0 && nivelBateria <= 100) {
 			this.nivelBateria = nivelBateria;
@@ -80,6 +85,7 @@ public abstract class Smartwatch {
 		return this.batimentosPorMinuto;
 	}
 	
+	// Regra de negócio para que não seja possível inserir valores inválidos
 	private void setBatimentosPorMinuto(int batimentosPorMinuto) {
 		if(batimentosPorMinuto >= 30 && batimentosPorMinuto <= 220) {
 			this.batimentosPorMinuto = batimentosPorMinuto;
@@ -97,6 +103,7 @@ public abstract class Smartwatch {
 		this.isNoPulso = estaNoPulso;
 	}
 	
+	//Método que exibe resumo do Smartwatch
 	public void exibirResumo() {
 	    System.out.println("--- RESUMO DO SMARTWATCH ---");
 	    System.out.println("Marca: " + this.marca);
