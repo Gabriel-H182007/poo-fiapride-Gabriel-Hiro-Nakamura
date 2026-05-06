@@ -44,6 +44,7 @@ criar variáveis soltas no main, como `String nomeAna
 Como a Classe ajuda a resolver isso?"
 
 **Sua Resposta:**
+
 [Precisamos criar uma classe `Passageiro` porque criar 
 variáveis soltas no main dificultaria a organização do 
 sistema e ficaria confuso e difícil de fazer a manutenção 
@@ -66,13 +67,14 @@ para fazer isso? Quais seriam os riscos para a nossa startup de mobilidade
 se deixássemos qualquer programador alterar o saldo diretamente?"
 
 **Sua Resposta:**
-[A criação de um método como adicionarSaldo(valor) permite controlar 
-como o saldo é alterado no sistema, pois um dos riscos para a startup 
-de mobilidade é que qualquer programador poderia inserir valores inválidos
-ou burlar o sistema, o que prejudicaria e poderia causar prejuízos a empresa.
-Além disso, isso dá bastante trabalho, pelo fato de ter que alterar diretamente 
-o saldo, exigindo mais linhas de códigos, porém isso gera vantagens com relação 
-a segurança e organização através das validações que são feitas.]
+
+[A criação de um método como adicionarSaldo(valor) permite controlar melhor como 
+o saldo é alterado no sistema, pois um dos riscos para a startup de mobilidade é
+que qualquer programador poderia inserir valores inválidos, como negativos ou burlar
+o sistema com manipulações indevidas dos dados, o que prejudicaria e poderia causar 
+prejuízos a empresa. Além disso, isso dá bastante trabalho pelo fato de ter que alterar
+diretamente o saldo, exigindo assim mais linhas de códigos, porém isso gera vantagens com
+relação a segurança e organização a longo prazo através das validações que são feitas.]
 
 ---
 
@@ -90,11 +92,13 @@ e entregar o documento ORIGINAL para a pessoa rasurar? "
 **Sua Resposta:**
 
 [Deixar os métodos `getSaldo` e `getNome`como público é seguro pelo fato de eles
-apenas conseguirem acessar o valor, sem modificar ele diretamente. Por outro lado 
-é perigoso deixar o atributo original público, pois qualquer parte do código poderia
-modificar o valor sem nenhum tipo de validação para impedir,o que poderia gerar erros
-e inconsistências. Com isso o uso do encapsulamento permite uma melhor proteção 
-e organização dos dados.]
+apenas conseguirem acessar o valor do atributo de forma controlada, sem modificar ele
+diretamente. Por outro lado, é perigoso deixar o atributo original como público, pois 
+qualquer parte do código poderia modificar o valor sem nenhum tipo de validação para 
+impedir,o que poderia gerar erros e inconsistências. Com isso o uso do encapsulamento 
+permite uma melhor proteção, organização dos dados e garante que as mudanças só aconteçam
+por meio de métodos específicos, como setters ou métodos com regras de negócio, já que o get
+funciona como uma cópia em que só é possível visualizar a informação.]
 
 ---
 
@@ -119,12 +123,14 @@ _Dica: Pense sobre o que pode ou não mudar fisicamente em um carro, e a diferen
 
 
 **Sua Resposta:**
-[Clicar em ´Gerar Getters e Setters para tudo' automaticamente é um erro, pois nem todo
-os atributos devem ser modificados no sistema, pois como por exemplo o atributo modelo, 
-não muda na vida real, não fazendo sentido assim alterá-lo após a criação do objeto.
-Além disso, as nossas duas decisões acima protegem o sistema de fraudes e falhas de lógica,
-pois garantimos que o método siga uma regra específica e que os dados não possam ser acessados
-e modificados diretamente pelos  desenvolvedores ou por qualquer um que acesse o código.]
+
+[Clicar em ´Gerar Getters e Setters para tudo' automaticamente é um erro, pois nem todos
+os atributos devem ser modificados livrementes no sistema. Por exemplo, o atributo modelo,
+não muda na vida real, logo não há sentido permitir a sua alteração após a criação do objeto.
+Além disso, as nossas duas decisões acima de não criar setModelo e de tornar o setPlaca privado
+ajudam a proteger o sistema de fraudes e falhas de lógica, pois garantimos que o método siga uma
+regra específica e que os dados não possam ser acessados e modificados diretamente pelos desenvolvedores
+ou por qualquer um que acesse o código.]
 
 ---
 
@@ -141,12 +147,14 @@ precisa descontar o  saldo? Se a Viagem tiver apenas a String "Ana Silva", ela c
 mexer no dinheiro dela?_"
 
 **Sua Resposta:**
+
 [O uso do objeto inteiro no construtor da Viagem é importante, pois ele permite acessar 
-e modificar os dados do usuário, como por exemplo o saldo. Porém, caso fosse pedido apenas
-a String do nome no construtor, a viagem só possuiria um texto, ou seja, não seria possível 
-acessar e descontar o valor da corrida no saldo do passageiro, sem isso a associação não 
-permite que os objetos tenham uma interação completa, não respeitando assim as regras de 
-negócio e tornando o sistema menos funcional e menos próximo da realidade.]
+e modificar os dados reais do usuário, como por exemplo o saldo. Porém, caso fosse pedido apenas
+a String do nome no construtor, a viagem só possuiria um valor de texto, sem qualquer ligação com
+o cliente, ou seja, não seria possível acessar e descontar o valor da corrida no saldo do passageiro, 
+já que não haveria acesso ao objeto original. Sem isso, a associação não permite que os objetos tenham
+uma interação completa, não respeitando assim as regras de negócio e tornando o sistema menos funcional
+e menos próximo da realidade.]
 
 ---
 
@@ -163,12 +171,13 @@ o princípio das aulas passadas que isso está protegendo?""
 
 
 **Sua Resposta:**
-[O Java não deixa a filha alterar as variáveis privadas da mãe diretamente, pelo fato de
-os atributos estares como private, impedindo assim que os valores deles sejam modificados. 
-O princípio utilizado nas aulas passadas é o encapsulamento, com isso, mesmo com a herança 
-a filha não pode acessar tudo livremente, sendo assim obrigada a usar super() ou setter, 
-pois isso evita que os valores de atributos importantes  sejam alterados sem nenhum 
-tipo de validação ou regra de negócio.]
+
+[O Java não deixa a classe filha alterar as variáveis privadas da mãe diretamente, porque esses 
+atributos estão protegidos justamente para garantir a segurança e integridade dos dados, impedindo
+assim que os valores deles sejam modificados. O princípio utilizado nas aulas passadas é o de encapsulamento,
+com isso, mesmo com a herança a filha não pode acessar tudo livremente, sendo assim obrigada a usar super() ou
+métodos controlados como setters, pois isso evita que os valores de atributos importantes sejam 
+alterados sem nenhum  tipo de validação ou regra de negócio.]
 
 ---
 
@@ -181,12 +190,14 @@ dentro do `Carro` e da `Moto`? Por que o contrato precisa existir na base da hie
 
 
 **Sua Resposta:**
+
 [Não, não conseguiríamos chamá-lo dentro do loop se ele não existisse na classe mãe, pois 
-como `veiculo` é do tipo genérico, o Java só consegue reconhecer métodos definidos naquela 
-classe. Ou seja, mesmo que `Carro`e `Moto` possuam `calcularAutonomia\(\)` é necessário 
-existir esse mesmo método na classe mãe para poder ser acessado polimorficamente, com isso
-ele funciona como um contrato garantindo que todas as subclasses tenham que implementar esse 
-comportamento, caso contrário o código não vai compilar.]
+como `veiculo` é do tipo genérico, o Java só consegue reconhecer métodos que estão definidos 
+nessa classe. Ou seja, mesmo que `Carro`e `Moto` possuam o método `calcularAutonomia\(\)`, ele
+precisa existir dentro da classe mãe para poder ser chamado de forma  polimórfica. Dessa forma, 
+ele funciona como um contrato, garantindo que todas as subclasses tenham que implementar esse 
+comportamento, pois caso contrário o código não vai compilar, já que o Java não consegue garantir
+que todos os objetos da lista terão esse método.]
 
 ---
 
@@ -206,12 +217,14 @@ Veiculo\(\)` e quebrar a lógica do nosso sistema?"
 
 
 **Sua Resposta:**
-[Não, não faz sentido existir um 'Veículo' sem ser de um tipo específico, por isso no código é
-utilizado `abstract` para dexar excplícito que a classe é um modelo base. O java não consegue 
-deduzir isso sozinho, pois ele não consegue entender o contexto do problema, apenas executa o 
-código. Se esquecermos de usar `abstract` alguma pessoa pode criar `new Veiculo\(\) e quebar a 
-lógica do sistema, já que não vai ter nenhenum impeditivo que proíba a criação de um veículo
-genérico.]
+
+[Não, não faz sentido existir um 'Veículo' sem ser de um tipo específico, como um carro ou uma
+moto genérica. Por isso, no código é utilizado `abstract` para dexar excplícito que a classe é apenas
+um modelo base. Além disso, o java não consegue deduzir isso sozinho, pois ele não consegue entender 
+o contexto do problema, apenas executa o que foi programado no código. Se esquecermos de usar `abstract`
+alguma pessoa pode criar `new Veiculo\(\) e quebar a  lógica do sistema, já que não haveria nenhenum 
+impeditivo que proíbisse a criação de um veículo genérico. Dessa forma, a classe abstrata garante que
+essa situação não aconteça.]
 
 ---
 
@@ -229,12 +242,14 @@ Pense: Se `CarroEletrico` pudesse herdar de `Veiculo` E de `Bateria` ao mesmo te
 Como as interfaces resolvem esse problema? "
 
 **Sua Resposta:**
-[O Java permite apenas heranças simples, mas com múltiplas implementações de interfaces, 
-para evitar conflitos entre classes que possuem métodos com o mesmo nome, mas de classes 
-diferentes, já que o sistema não iria saber qual deles usar, com isso a interface apenas
-define o que deve ser feito e não como. Assim, se `CarroEletrico` e `Bateria`tivessem o 
-mesmo método chamado `ligar`, não haveria esse problema de ambiguidade e evitaria conflitos 
-de herança múltipla nesses tipos de cenários.]
+
+[O Java permite apenas heranças simples, mas aceita múltiplas implementações de interfaces
+para evitar conflitos entre classes, como em situações em que duas classes diferentes  possuem 
+métodos com o mesmo nome. Nesse caso, o sistema não iria saber qual deles usar, o que causaria
+ambiguidade. Para resolver isso, as interfaces apenas definem o que deve ser feito e não como. Assim,
+mesmo que `CarroEletrico` e `Bateria` tenham um método chamado `ligar`, não haveria esse problema, 
+pois a própria classe implementaria o comportamento, evitando assim a ambiguidade e os conflitos de
+herança múltipla.]
 
 ---
 
@@ -253,17 +268,22 @@ um Smartwatch]
 [Smartwatch, AppleWatch, GalaxyWatch e Dono]
 
 **Qual foi o maior desafio técnico que você enfrentou?**
-[O maior desafio técnico que eu enfrentei foi entender como aplicar os 
-conceitos de encapsulamento, métodos, clean code e polimorfismo, já que 
-no início eu tinha  dificuldade de saber como implementar corretamente os 
-setters e as regras de negócios, quais métodos seriam mais adequados para 
-o meu objeto, como utlizar o polimorfismo e o melhor jeito de deixar o código
-mais escalável. Porém, com o passar das aulas, atividades  e com os exemplos 
-presentes  nos materiais, eu consegui ter ideias de métodos que eu poderia usar, 
-como utlizar o polimorfismo para cada classe , como proteger bem os dados com o 
-uso das regras de negócios e também do encapsulamento com getters e setters, além 
-de saber como deixar o código mais limpo. baseado nas dicas de clean code em cada 
-conteúdo das aulas.]
+
+[O maior desafio técnico que eu enfrentei foi entender como aplicar corretamente
+os conceitos de encapsulamento, métodos, clean code e polimorfismo. No início, eu
+tinha  dificuldades em saber como implementar os  setters com as regras de negócios,
+quais métodos seriam mais adequados para o meu objeto, como utlizar o polimorfismo
+e o melhor jeito de deixar o código mais escalável. Além disso, tive alguns impasses
+na hora de orgnizar as classes e resolver os desafios práticos. Com o passar das aulas
+e das atividades, além dos exemplos presentes  nos materiais, eu fui conseguindo evoluir
+e ter mais clareza na criação de métodos que eu poderia usar, bem como entendi melhor como
+utlizar o polimorfismo para cada classe, como proteger  bem os dados com o uso das regras
+de negócios e também do encapsulamento com getters e setters. Além de saber como resolver
+os desafios, organizar e deixar o código mais limpo, baseado nas dicas de clean code presentes
+em cada material das aulas. Com isso, no final eu pude perceber que o meu projeto pessoal 
+evolui de forma significativa com o passar do tempo, já que a cada conteúdo novo visto na 
+sala eu ia adicionando e melhorando o meu código, o que também me ajudou a consolidar melhor
+o aprendizado na prática.]
 
 ---
 
