@@ -48,13 +48,18 @@ Como a Classe ajuda a resolver isso?"
 [Precisamos criar uma classe `Passageiro` porque criar 
 variáveis soltas no main dificultaria a organização do 
 sistema e ficaria confuso e difícil de fazer a manutenção 
-do código, principalmente com o passar do tempo e se o 
-sistema tiver muitos usuários. Além disso a classe Passageiro, 
+do código principalmente com o passar do tempo e se o 
+sistema tiver muitos usuários. Além disso, a classe Passageiro, 
 permite reutilizar a mesma estrutura para inúmeros usuários,
 permitindo assim instanciar vários objetos com os mesmos 
 atributos, mas com valores diferentes,o que facilita a 
 escalabilidade e leitura do código por outros desenvolvedores, 
-bem isso segue as boas práticas de programação orientada a objetos.]
+bem como isso segue as boas práticas de programação orientada a objetos.]
+
+**Prints dos diagramas:**
+| FiapRide | Smartwatch |
+|----------|----------|
+| ![Aula 1](images/fiapride-aula1.png) | ![Aula 1](images/smartwatch-aula1.png) |
 
  ---
 
@@ -76,6 +81,11 @@ prejuízos a empresa. Além disso, isso dá bastante trabalho pelo fato de ter q
 diretamente o saldo, exigindo assim mais linhas de códigos, porém isso gera vantagens com
 relação a segurança e organização a longo prazo através das validações que são feitas.]
 
+**Prints dos diagramas:**
+| FiapRide | Smartwatch |
+|----------|----------|
+| ![Aula 2](images/fiapride-aula2.png) | ![Aula 2](images/smartwatch-aula2.png) |
+
 ---
 
 ### Aula 3 - Encapsulamento
@@ -95,10 +105,15 @@ e entregar o documento ORIGINAL para a pessoa rasurar? "
 apenas conseguirem acessar o valor do atributo de forma controlada, sem modificar ele
 diretamente. Por outro lado, é perigoso deixar o atributo original como público, pois 
 qualquer parte do código poderia modificar o valor sem nenhum tipo de validação para 
-impedir,o que poderia gerar erros e inconsistências. Com isso o uso do encapsulamento 
+impedir,o que poderia gerar erros e inconsistências. Com isso, o uso do encapsulamento 
 permite uma melhor proteção, organização dos dados e garante que as mudanças só aconteçam
 por meio de métodos específicos, como setters ou métodos com regras de negócio, já que o get
 funciona como uma cópia em que só é possível visualizar a informação.]
+
+**Prints dos diagramas:**
+| FiapRide | Smartwatch |
+|----------|----------|
+| ![Aula 3](images/fiapride-aula3.png) | ![Aula 3](images/smartwatch-aula3.png) |
 
 ---
 
@@ -125,12 +140,17 @@ _Dica: Pense sobre o que pode ou não mudar fisicamente em um carro, e a diferen
 **Sua Resposta:**
 
 [Clicar em ´Gerar Getters e Setters para tudo' automaticamente é um erro, pois nem todos
-os atributos devem ser modificados livrementes no sistema. Por exemplo, o atributo modelo,
+os atributos devem ser modificados livremente no sistema. Por exemplo, o atributo modelo,
 não muda na vida real, logo não há sentido permitir a sua alteração após a criação do objeto.
 Além disso, as nossas duas decisões acima de não criar setModelo e de tornar o setPlaca privado
 ajudam a proteger o sistema de fraudes e falhas de lógica, pois garantimos que o método siga uma
 regra específica e que os dados não possam ser acessados e modificados diretamente pelos desenvolvedores
 ou por qualquer um que acesse o código.]
+
+**Prints dos diagramas:**
+| FiapRide | Smartwatch |
+|----------|----------|
+| ![Aula 4](images/fiapride-aula4.png) | ![Aula 4](images/smartwatch-aula4.png) |
 
 ---
 
@@ -156,6 +176,11 @@ já que não haveria acesso ao objeto original. Sem isso, a associação não pe
 uma interação completa, não respeitando assim as regras de negócio e tornando o sistema menos funcional
 e menos próximo da realidade.]
 
+**Prints dos diagramas:**
+| FiapRide | Smartwatch |
+|----------|----------|
+| ![Aula 5](images/fiapride-aula5.png) | ![Aula 5](images/smartwatch-aula5.png) |
+
 ---
 
 ### Aula 6 - Herança
@@ -179,6 +204,11 @@ com isso, mesmo com a herança a filha não pode acessar tudo livremente, sendo 
 métodos controlados como setters, pois isso evita que os valores de atributos importantes sejam 
 alterados sem nenhum  tipo de validação ou regra de negócio.]
 
+**Prints dos diagramas:**
+| FiapRide | Smartwatch |
+|----------|----------|
+| ![Aula 6](images/fiapride-aula6.png) | ![Aula 6](images/smartwatch-aula6.png) |
+
 ---
 
 ### Aula 7 - Polimorfismo
@@ -198,6 +228,11 @@ precisa existir dentro da classe mãe para poder ser chamado de forma  polimórf
 ele funciona como um contrato, garantindo que todas as subclasses tenham que implementar esse 
 comportamento, pois caso contrário o código não vai compilar, já que o Java não consegue garantir
 que todos os objetos da lista terão esse método.]
+
+**Prints dos diagramas:**
+| FiapRide | Smartwatch |
+|----------|----------|
+| ![Aula 7](images/fiapride-aula7.png) | ![Aula 7](images/smartwatch-aula7.png) |
 
 ---
 
@@ -219,12 +254,17 @@ Veiculo\(\)` e quebrar a lógica do nosso sistema?"
 **Sua Resposta:**
 
 [Não, não faz sentido existir um 'Veículo' sem ser de um tipo específico, como um carro ou uma
-moto genérica. Por isso, no código é utilizado `abstract` para dexar excplícito que a classe é apenas
+moto genérica. Por isso, no código é utilizado `abstract` para deixar explícito que a classe é apenas
 um modelo base. Além disso, o java não consegue deduzir isso sozinho, pois ele não consegue entender 
 o contexto do problema, apenas executa o que foi programado no código. Se esquecermos de usar `abstract`
-alguma pessoa pode criar `new Veiculo\(\) e quebar a  lógica do sistema, já que não haveria nenhenum 
+alguma pessoa pode criar `new Veiculo\(\) e quebar a  lógica do sistema, já que não haveria nenhum 
 impeditivo que proíbisse a criação de um veículo genérico. Dessa forma, a classe abstrata garante que
 essa situação não aconteça.]
+
+**Prints dos diagramas:**
+| FiapRide | Smartwatch |
+|----------|----------|
+| ![Aula 8](images/fiapride-aula8.png) | ![Aula 8](images/smartwatch-aula8.png) |
 
 ---
 
@@ -251,34 +291,39 @@ mesmo que `CarroEletrico` e `Bateria` tenham um método chamado `ligar`, não ha
 pois a própria classe implementaria o comportamento, evitando assim a ambiguidade e os conflitos de
 herança múltipla.]
 
+**Prints dos diagramas:**
+| FiapRide | Smartwatch |
+|----------|----------|
+| ![Aula 9](images/fiapride-aula9.png) | ![Aula 9](images/smartwatch-aula9.png) |
+
 ---
 
 ## Desafios Técnicos Implementados
 
 ### Desafio Pessoal (Seu Projeto)
 
-**Qual foi o domínio que você escolheu para seu projeto pessoal?*
-*
+**Qual foi o domínio que você escolheu para seu projeto pessoal?**
 
 [O domínio que eu escolhi foi o de relógios de pulso inteligentes, mais especificamente 
 um Smartwatch]
 
 
 **Quais classes você criou?**
+
 [Smartwatch, AppleWatch, GalaxyWatch e Dono]
 
 **Qual foi o maior desafio técnico que você enfrentou?**
 
 [O maior desafio técnico que eu enfrentei foi entender como aplicar corretamente
 os conceitos de encapsulamento, métodos, clean code e polimorfismo. No início, eu
-tinha  dificuldades em saber como implementar os  setters com as regras de negócios,
+tinha  dificuldades em saber como implementar os  setters com as regras de negócio,
 quais métodos seriam mais adequados para o meu objeto, como utlizar o polimorfismo
 e o melhor jeito de deixar o código mais escalável. Além disso, tive alguns impasses
-na hora de orgnizar as classes e resolver os desafios práticos. Com o passar das aulas
+na hora de organizar as classes e resolver os desafios práticos. Com o passar das aulas
 e das atividades, além dos exemplos presentes  nos materiais, eu fui conseguindo evoluir
 e ter mais clareza na criação de métodos que eu poderia usar, bem como entendi melhor como
-utlizar o polimorfismo para cada classe, como proteger  bem os dados com o uso das regras
-de negócios e também do encapsulamento com getters e setters. Além de saber como resolver
+utilizar o polimorfismo para cada classe, como proteger  bem os dados com o uso das regras
+de negócio e também do encapsulamento com getters e setters. Além de saber como resolver
 os desafios, organizar e deixar o código mais limpo, baseado nas dicas de clean code presentes
 em cada material das aulas. Com isso, no final eu pude perceber que o meu projeto pessoal 
 evolui de forma significativa com o passar do tempo, já que a cada conteúdo novo visto na 
@@ -290,14 +335,16 @@ o aprendizado na prática.]
 ## Conclusão
 
 **O que você aprendeu nestas 9 aulas?**
+
 [Nessas 9 aulas eu consegui aprender os principais conceitos de Programação 
 Orientada a Objetos e como aplica-lás de forma prática em um projeto pessoal. 
-Em que a cada aula eu inseria no meu objeto os conteúdos de classes e objetos, 
-métodos, encapsulamento, construtores, associação, herança, polimorfismo, 
-classes abstratas e interfaces, além do uso do clean code, até o 
+Em que a cada aula eu fazia os desafios e inseria no meu objeto os conteúdos 
+de classes e objetos, métodos, encapsulamento, construtores, associação, herança,
+polimorfismo, classes abstratas e interfaces, além do uso do clean code, até o 
 projeto ficar completo e bem estruturado.]
 
 **Qual conceito foi mais difícil de entender?**
+
 [O conceito mais difícil de entender foi o de polimorfismo
 já que eu tive dificuldade de saber como implementar os 
 métodos e comportamentos nas subclasses, para superá-lo eu
@@ -305,6 +352,7 @@ treinei com exemplos mais simples e estudei bastante os
 materiais das aulas.]
 
 **O que você melhoraria no seu projeto se pudesse refazer?**
-[Se eu pudesse refazer o meu projeto, eu melhoraria o clean code, deixando o código mais legível
-e melhor estruturado, aprimoraria as regras de negócio e desenvolveria mais os métodos das minhas
-classes.]
+
+[Se eu pudesse refazer o meu projeto, eu melhoraria o clean code, deixando o código mais legível,
+organizado e melhor estruturado, aprimoraria as regras de negócio e desenvolveria mais os métodos
+das minhas classes, tornando-os mais completos.]
