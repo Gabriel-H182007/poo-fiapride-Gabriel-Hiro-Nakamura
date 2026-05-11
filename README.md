@@ -49,10 +49,10 @@ Como a Classe ajuda a resolver isso?"
 variáveis soltas no main dificultaria a organização do 
 sistema e ficaria confuso e difícil de fazer a manutenção 
 do código principalmente com o passar do tempo e se o 
-sistema tiver muitos usuários. Além disso, a classe Passageiro, 
+sistema tiver muitos usuários. Além disso, a classe Passageiro 
 permite reutilizar a mesma estrutura para inúmeros usuários,
 permitindo assim instanciar vários objetos com os mesmos 
-atributos, mas com valores diferentes,o que facilita a 
+atributos, mas com valores diferentes, o que facilita a 
 escalabilidade e leitura do código por outros desenvolvedores, 
 bem como isso segue as boas práticas de programação orientada a objetos.]
 
@@ -77,8 +77,8 @@ se deixássemos qualquer programador alterar o saldo diretamente?"
 o saldo é alterado no sistema, pois um dos riscos para a startup de mobilidade é
 que qualquer programador poderia inserir valores inválidos, como negativos ou burlar
 o sistema com manipulações indevidas dos dados, o que prejudicaria e poderia causar 
-prejuízos a empresa. Além disso, isso dá bastante trabalho pelo fato de ter que alterar
-diretamente o saldo, exigindo assim mais linhas de códigos, porém isso gera vantagens com
+prejuízos à empresa. Além disso, isso dá bastante trabalho pelo fato de ter que alterar
+diretamente o saldo, exigindo assim mais linhas de código, porém isso gera vantagens com
 relação a segurança e organização a longo prazo através das validações que são feitas.]
 
 **Prints dos diagramas:**
@@ -101,11 +101,11 @@ e entregar o documento ORIGINAL para a pessoa rasurar? "
 
 **Sua Resposta:**
 
-[Deixar os métodos `getSaldo` e `getNome`como público é seguro pelo fato de eles
-apenas conseguirem acessar o valor do atributo de forma controlada, sem modificar ele
+[Deixar os métodos `getSaldo` e `getNome` como público é seguro pelo fato de eles
+apenas conseguirem acessar o valor do atributo de forma controlada, sem modificá-lo
 diretamente. Por outro lado, é perigoso deixar o atributo original como público, pois 
 qualquer parte do código poderia modificar o valor sem nenhum tipo de validação para 
-impedir,o que poderia gerar erros e inconsistências. Com isso, o uso do encapsulamento 
+impedir, o que poderia gerar erros e inconsistências. Com isso, o uso do encapsulamento 
 permite uma melhor proteção, organização dos dados e garante que as mudanças só aconteçam
 por meio de métodos específicos, como setters ou métodos com regras de negócio, já que o get
 funciona como uma cópia em que só é possível visualizar a informação.]
@@ -139,8 +139,8 @@ _Dica: Pense sobre o que pode ou não mudar fisicamente em um carro, e a diferen
 
 **Sua Resposta:**
 
-[Clicar em ´Gerar Getters e Setters para tudo' automaticamente é um erro, pois nem todos
-os atributos devem ser modificados livremente no sistema. Por exemplo, o atributo modelo,
+[Clicar em 'Gerar Getters e Setters para tudo' automaticamente é um erro, pois nem todos
+os atributos devem ser modificados livremente no sistema. Por exemplo, o atributo modelo 
 não muda na vida real, logo não há sentido permitir a sua alteração após a criação do objeto.
 Além disso, as nossas duas decisões acima de não criar setModelo e de tornar o setPlaca privado
 ajudam a proteger o sistema de fraudes e falhas de lógica, pois garantimos que o método siga uma
@@ -186,7 +186,7 @@ e menos próximo da realidade.]
 ### Aula 6 - Herança
 
 **Pergunta:** ""No nosso código, a mãe `Veiculo` possui os atributos `placa` e `modelo` 
-como `private`. Quando o `Carro` herda de`Veiculo`, ele recebe esses atributos, mas o
+como `private`. Quando o `Carro` herda de `Veiculo`, ele recebe esses atributos, mas o
 código dentro de `Carro` NÃO consegue fazer `this.placa = "ABC"`. Ele é obrigado a usar
 o `super\(\)` ou o `setPlaca\(\)`.
 
@@ -223,7 +223,7 @@ dentro do `Carro` e da `Moto`? Por que o contrato precisa existir na base da hie
 
 [Não, não conseguiríamos chamá-lo dentro do loop se ele não existisse na classe mãe, pois 
 como `veiculo` é do tipo genérico, o Java só consegue reconhecer métodos que estão definidos 
-nessa classe. Ou seja, mesmo que `Carro`e `Moto` possuam o método `calcularAutonomia\(\)`, ele
+nessa classe. Ou seja, mesmo que `Carro` e `Moto` possuam o método `calcularAutonomia\(\)`, ele
 precisa existir dentro da classe mãe para poder ser chamado de forma  polimórfica. Dessa forma, 
 ele funciona como um contrato, garantindo que todas as subclasses tenham que implementar esse 
 comportamento, pois caso contrário o código não vai compilar, já que o Java não consegue garantir
@@ -255,9 +255,9 @@ Veiculo\(\)` e quebrar a lógica do nosso sistema?"
 
 [Não, não faz sentido existir um 'Veículo' sem ser de um tipo específico, como um carro ou uma
 moto genérica. Por isso, no código é utilizado `abstract` para deixar explícito que a classe é apenas
-um modelo base. Além disso, o java não consegue deduzir isso sozinho, pois ele não consegue entender 
+um modelo base. Além disso, o Java não consegue deduzir isso sozinho, pois ele não consegue entender 
 o contexto do problema, apenas executa o que foi programado no código. Se esquecermos de usar `abstract`
-alguma pessoa pode criar `new Veiculo\(\) e quebar a  lógica do sistema, já que não haveria nenhum 
+alguma pessoa pode criar `new Veiculo(\) e quebrar a  lógica do sistema, já que não haveria nenhum 
 impeditivo que proíbisse a criação de um veículo genérico. Dessa forma, a classe abstrata garante que
 essa situação não aconteça.]
 
@@ -317,7 +317,7 @@ um Smartwatch]
 [O maior desafio técnico que eu enfrentei foi entender como aplicar corretamente
 os conceitos de encapsulamento, métodos, clean code e polimorfismo. No início, eu
 tinha  dificuldades em saber como implementar os  setters com as regras de negócio,
-quais métodos seriam mais adequados para o meu objeto, como utlizar o polimorfismo
+quais métodos seriam mais adequados para o meu objeto, como utilizar o polimorfismo
 e o melhor jeito de deixar o código mais escalável. Além disso, tive alguns impasses
 na hora de organizar as classes e resolver os desafios práticos. Com o passar das aulas
 e das atividades, além dos exemplos presentes  nos materiais, eu fui conseguindo evoluir
@@ -326,7 +326,7 @@ utilizar o polimorfismo para cada classe, como proteger  bem os dados com o uso 
 de negócio e também do encapsulamento com getters e setters. Além de saber como resolver
 os desafios, organizar e deixar o código mais limpo, baseado nas dicas de clean code presentes
 em cada material das aulas. Com isso, no final eu pude perceber que o meu projeto pessoal 
-evolui de forma significativa com o passar do tempo, já que a cada conteúdo novo visto na 
+evoluiu de forma significativa com o passar do tempo, já que a cada conteúdo novo visto na 
 sala eu ia adicionando e melhorando o meu código, o que também me ajudou a consolidar melhor
 o aprendizado na prática.]
 
@@ -337,8 +337,8 @@ o aprendizado na prática.]
 **O que você aprendeu nestas 9 aulas?**
 
 [Nessas 9 aulas eu consegui aprender os principais conceitos de Programação 
-Orientada a Objetos e como aplica-lás de forma prática em um projeto pessoal. 
-Em que a cada aula eu fazia os desafios e inseria no meu objeto os conteúdos 
+Orientada a Objetos e como aplicá-los de forma prática em um projeto pessoal. 
+Em cada aula, eu fazia os desafios e inseria no meu objeto os conteúdos 
 de classes e objetos, métodos, encapsulamento, construtores, associação, herança,
 polimorfismo, classes abstratas e interfaces, além do uso do clean code, até o 
 projeto ficar completo e bem estruturado.]
